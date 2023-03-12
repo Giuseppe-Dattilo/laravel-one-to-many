@@ -19,7 +19,7 @@ return new class extends Migration
             // $table->foreign('type_id')->references('id')->on('types')->onDelete('set null');
             
             // riga unica
-            $table->foreignId('type_id')->after('id')->nullable()->onDelete('set null')->constrained();
+            $table->foreignId('type_id')->after('id')->nullable()->constrained()->onDelete('set null');
         });
     }
 

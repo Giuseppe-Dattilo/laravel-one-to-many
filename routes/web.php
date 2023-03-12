@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/',[AdminHomeController::class, 'index'])->name('home');
     // Rotte del project
     Route::resource('/projects', ProjectController::class);   
+    Route::resource('/types', TypeController::class);   
      // Rotte del toggle
      Route::patch('/projects/{project}/toggle', [ProjectController::class, 'toggle'])->name('projects.toggle'); 
 
