@@ -84,7 +84,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return to_route('admin.projects.show', $project->id)->with('type', 'success')->with('Nuovo progetto creato con successo!');
+        return to_route('admin.projects.show', $project->id)->with('type', 'success')->with('msg','Nuovo progetto creato con successo!');
 
     }
 
@@ -93,7 +93,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        return to_route('admin.projects.index');
     }
 
     /**
